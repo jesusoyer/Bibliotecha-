@@ -29,3 +29,4 @@ Example.init(
       }
 )
 
+module.exports = Example;
