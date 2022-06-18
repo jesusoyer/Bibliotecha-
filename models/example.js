@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 class Example extends Model {};
 
-const sequelize = require('../controllers/connection.js');
+const sequelize = require('../config/connection.js');
 
 Example.init(
     {
@@ -29,3 +29,4 @@ Example.init(
       }
 )
 
+module.exports = Example;
