@@ -25,7 +25,7 @@ Example.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Example',
+        modelName: 'example',
       }
 )
 
