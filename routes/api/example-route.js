@@ -62,4 +62,15 @@ router.get('/:id', async (req, res) => {
     }
   });
 
+  // delete data record by its id value
+  router.delete('/:id', async (req, res) => {
+    const deletedData = await Example.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    
+    res.json(deletedData);
+  });
+
     module.exports = router;
