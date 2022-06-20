@@ -28,4 +28,16 @@ router.get('/:id', async (req, res) => {
   }
   });
 
+  // create a new data record
+  router.post('/', async (req, res) => {
+    try {
+      const exampleData = await Example.create({
+        name: req.body.name,
+      });
+      res.status(200).json(exampleData);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
     module.exports = router;
