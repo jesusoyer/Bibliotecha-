@@ -40,4 +40,26 @@ router.get('/:id', async (req, res) => {
     }
   });
 
+  // update data record by its id value
+  router.put('/:id', async (req, res) => {
+    try {
+      const exampleData = await Example.update(
+        {
+        name: req.body.name
+        }, 
+        {
+        where: {
+          id: req.params.id,
+        },
+      });
+      if (!exampleData[0]) {
+        res.status(404).json({ message: 'No category with this id!' });
+        return;
+      }
+      res.status(200).json(exampleData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
     module.exports = router;
