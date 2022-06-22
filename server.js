@@ -2,7 +2,7 @@ const express = require("express");
 const sequelize = require('./config/connection');
 const routes = require('./routes')
 
-const Example = require('./models/example.js')
+// const Example = require('./models/example.js')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
