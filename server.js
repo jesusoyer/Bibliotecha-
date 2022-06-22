@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require('express-session');
 const sequelize = require('./config/connection');
 const routes = require('./routes')
 
@@ -6,6 +7,14 @@ const routes = require('./routes')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const sess = {
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+}
+
+app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
