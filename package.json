@@ -24,7 +24,6 @@
     "handlebars": "^4.7.6",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.5",
-    "bcrypt": "^5.0.0",
-    "connect-session-sequelize": "^7.04"
+    "bcrypt": "^5.0.0"
   }
 }
