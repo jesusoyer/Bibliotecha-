@@ -14,7 +14,8 @@ Example.init(
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: "John Doe",
             validate: {
                 len: [2, 32]
             }
