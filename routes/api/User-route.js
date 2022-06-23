@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const  User  = require('../../models/example.js');
+const  User  = require('../../models/User.js');
 
 // create new user
 router.post('/', async (req, res) => {
@@ -58,3 +58,5 @@ router.post('/login', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;
