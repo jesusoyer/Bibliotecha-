@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const Example = require('../models/example')
+const User = require('../models/User')
 
 
 router.get('/', async (req, res) => {
     try {
-      const exampleData = await Example.findAll({});
-      console.log(exampleData)
-      // res.status(200).json(exampleData);
+      const userData = await User.findAll({});
+      console.log(userData)
+      // res.status(200).json(userData);
     
-      const exam = exampleData.map((exampleData) =>
-      exampleData.get({ plain: true })
+      const exam = userData.map((userData) =>
+      userData.get({ plain: true })
     );
    
        
