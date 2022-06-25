@@ -1,14 +1,27 @@
-const seedExample = require('./example-seeds');
-
+const userData= require("./user.json")
+const bookData=require("./projectData.json")
+const User = require('../models/User')
+const Book = require('../models/Book')
 const sequelize = require('../config/connection');
 
-const seedAll = async () => {
+const seedDatabase = async () => {
     await sequelize.sync({ force: true });
-    console.log('\n----- DATABASE SYNCED -----\n');
-    await seedExample();
-    console.log('\n----- EXAMPLE SEEDED -----\n');
-
+  
+     const users = await User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
+  
+    for (const books of bookData) {
+        await Book.create({
+          ...books,
+          user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+      }
+      
+      
+  
     process.exit(0);
-};
+  };
 
-seedAll();
+  seedDatabase();
