@@ -16,12 +16,19 @@
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
-
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
     <a href ="/login">login</a>
+    {{/if}}
   </main>
   <footer>
       
   </footer>
+
+{{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+{{/if}}
 </body>
 
 </html>
