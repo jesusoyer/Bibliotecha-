@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
 
             res.status(200).json(userData);
         });
+console.log(userData);
     } catch (err) {
         console.log(err)
         res.status(500).json(err)
@@ -42,7 +43,7 @@ router.post('/login', async (req, res) => {
         if (!correctPassword) {
             res
             .status(400)
-            .json({ massage: 'Incorrect email or password! Please try again.'})
+            .json({ message: 'Incorrect email or password! Please try again.'})
             return;
         }
 
@@ -68,5 +69,16 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 })
+
+//test route to see if user data is being posted after signup/login
+router.get('/', async (req, res) => {
+    try {
+      const userData = await User.findAll({});
+      res.status(200).json(userData);
+    } catch (err) {
+      console.log(err)
+      
+    }
+    });
 
 module.exports = router;
