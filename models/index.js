@@ -1,16 +1,9 @@
-const Example = require('./example');
-<<<<<<< HEAD
+const Book = require('./Book');
 const User = require("./User")
-//our model associations will go here
-
-module.exports = {Example,User}
-=======
-const User = require('./User');
 
 //our model associations will go here
 
 module.exports = {
-    Example,
+    Book,
     User
 }
->>>>>>> e8cb82b587f5f025c758f26bc0f5ff211a33df78
