@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 class Example extends Model {};
 
-const sequelize = require('../controllers/connection.js');
+const sequelize = require('../config/connection.js');
 
 Example.init(
     {
@@ -14,7 +14,8 @@ Example.init(
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: "John Doe",
             validate: {
                 len: [2, 32]
             }
@@ -25,7 +26,8 @@ Example.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category',
+        modelName: 'example',
       }
 )
 
+module.exports = Example;
