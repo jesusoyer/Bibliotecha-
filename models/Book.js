@@ -36,7 +36,14 @@ Book.init(
         date_published: {
             type: DataTypes.INTEGER,
             allowNull: false
-        }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              id: 'id'
+            }
+          }
     },
     {
         sequelize,
