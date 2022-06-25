@@ -1,4 +1,3 @@
-const Example = require('../models/example')
 const router = require('express').Router();
 // const User = require('../models/User')
 const Book = require('../models/Book');
@@ -13,27 +12,26 @@ router.get('/', async (req, res) => {
     bookData.get({ plain: true })
   );
  
+  console.log(book)
      
 
   res.render('homepage', {
-    exam, });
+    book, });
     
-      const exam = exampleData.map((exampleData) =>
-      exampleData.get({ plain: true })
-    );
-   
-       
-        
-        
-
-    res.render('homepage', {
-      exam, 
-      
-    });   
     } catch (err) {
       console.log(err)
       res.status(500).json(err)
     }
+});
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('login');
 });
 
 module.exports = router;
