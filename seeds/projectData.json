@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Example Title One",
+        "author": "Author McWords",
+        "ISBN": "111111",
+        "Category": "Science-Fiction",
+        "date_published": "2001"
+    },
+    {
+        "title": "Example Title Two",
+        "author": "Wordy McAuthor",
+        "ISBN": "222222",
+        "Category": "Non-Fiction",
+        "date_published": "2002"
+    }
+]
