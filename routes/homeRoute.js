@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> f516c1fc31f9e1194b0f14b8f4c600453de4a7a0
 const router = require('express').Router();
 // const User = require('../models/User')
 const Book = require('../models/Book');
@@ -20,13 +16,8 @@ router.get('/', async (req, res) => {
      
 
   res.render('homepage', {
-<<<<<<< HEAD
-    ...book, });
-   
-=======
     book, });
     
->>>>>>> f516c1fc31f9e1194b0f14b8f4c600453de4a7a0
     } catch (err) {
       console.log(err)
       res.status(500).json(err)
