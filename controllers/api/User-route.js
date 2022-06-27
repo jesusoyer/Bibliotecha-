@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const  User  = require('../../models/User.js');
+const  {User}  = require('../../models/');
 
 // create new user
 router.post('/', async (req, res) => {
@@ -11,7 +11,8 @@ router.post('/', async (req, res) => {
         });
 
         req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
 
             res.status(200).json(userData);
         });
@@ -25,11 +26,7 @@ console.log(userData);
 // login
 router.post('/login', async (req, res) => {
     try {
-        const userData = await User.findOne({
-            where: {
-                email: req.body.email
-            }
-        });
+        const userData = await User.findOne({where: { email: req.body.email }  });
 
         if (!userData) {
             res
@@ -37,7 +34,7 @@ router.post('/login', async (req, res) => {
             .json({ message: 'User not found!'});
             return;
         }
-
+        console.log(userData.username)
         const correctPassword = await userData.checkPassword(req.body.password);
 
         if (!correctPassword) {
@@ -47,12 +44,17 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        console.log(correctPassword.password)
+
         req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
 
             res
             .status(200)
-            .json({ message: 'You are now logged in!'});
+            .json({ user: userData, message: 'you are now logged in'});
+            console.log('you are logged in')
+            console.log(userData)
         });
     } catch(err) {
         console.log(err)
@@ -61,7 +63,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_In) {
         req.session.destroy(() => {
             res.status(204).end()
         });

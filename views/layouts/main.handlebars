@@ -4,33 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>welcome</title>
+  <title>hompage</title>
  
 </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      User Registry
+      Sign In.
     </h1>
   </header>
   
 
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href ="/login">login</a>
-    {{/if}}
-  </main>
-  <footer>
-      
-  </footer>
+  </nav>
+  <main>
+   {{#if logged_in}}
+        <a href = "/">Home</a>
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        
+        <a href="/login">login</a>
+        {{/if}}
 
-{{#if loggedIn}}
+
+   
+{{{body}}}
+    
+
+ {{#if logged_in}}
   <script src="/js/logout.js"></script>
-{{/if}}
+  {{/if}}
 </body>
 
 </html>
