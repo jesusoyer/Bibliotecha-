@@ -1,13 +1,19 @@
-const Example = require('./example');
+const Book = require('./Book')
 const User = require("./User")
-//our model associations will go here
 
-module.exports = {Example,User}
-const User = require('./User');
+User.hasMany(Book, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+  });
+  
+  Book.belongsTo(User, {
+    foreignKey: 'user_id'
+  });
 
-//our model associations will go here
+
+
 
 module.exports = {
-    Example,
+    Book,
     User
 }
