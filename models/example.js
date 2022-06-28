@@ -14,7 +14,8 @@ Example.init(
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: "John Doe",
             validate: {
                 len: [2, 32]
             }
@@ -25,7 +26,7 @@ Example.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Example',
+        modelName: 'example',
       }
 )
 
