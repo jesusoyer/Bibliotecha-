@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const  Example  = require('../../models/example.js');
+const  Book  = require('../../models/Book.js');
 
 //get all data records
 router.get('/', async (req, res) => {
     try {
-      const exampleData = await Example.findAll({});
-      res.status(200).json(exampleData);
+      const bookData = await Book.findAll({});
+      res.status(200).json(bookData);
     } catch (err) {
       console.log(err)
     }
@@ -14,12 +14,12 @@ router.get('/', async (req, res) => {
 //get one data record by its id value
 router.get('/:id', async (req, res) => {
   try {
-    const exampleData = await Example.findByPk(req.params.id, {});
-    if (!exampleData) {
+    const bookData = await Book.findByPk(req.params.id, {});
+    if (!bookData) {
       res.status(404).json({ message: 'No category with this id!' });
       return;
     }
-    res.status(200).json(exampleData);
+    res.status(200).json(bookData);
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
@@ -29,10 +29,10 @@ router.get('/:id', async (req, res) => {
   // create a new data record
   router.post('/', async (req, res) => {
     try {
-      const exampleData = await Example.create({
+      const bookData = await Book.create({
         name: req.body.name,
       });
-      res.status(200).json(exampleData);
+      res.status(200).json(bookData);
     } catch (err) {
       res.status(400).json(err);
     }
@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
   // update data record by its id value
   router.put('/:id', async (req, res) => {
     try {
-      const exampleData = await Example.update(
+      const bookData = await Book.update(
         {
         name: req.body.name
         }, 
@@ -50,11 +50,11 @@ router.get('/:id', async (req, res) => {
           id: req.params.id,
         },
       });
-      if (!exampleData[0]) {
+      if (!bookData[0]) {
         res.status(404).json({ message: 'No category with this id!' });
         return;
       }
-      res.status(200).json(exampleData);
+      res.status(200).json(bookData);
     } catch (err) {
       res.status(500).json(err);
     }
@@ -62,7 +62,7 @@ router.get('/:id', async (req, res) => {
 
   // delete data record by its id value
   router.delete('/:id', async (req, res) => {
-    const deletedData = await Example.destroy({
+    const deletedData = await Book.destroy({
       where: {
         id: req.params.id,
       },
