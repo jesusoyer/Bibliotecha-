@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const  Book  = require('../../models/Book.js');
+const withAuth = require('../../utils/auth.js');
 
 //get all data records
 router.get('/', async (req, res) => {
@@ -27,10 +28,11 @@ router.get('/:id', async (req, res) => {
   });
 
   // create a new data record
-  router.post('/', async (req, res) => {
+  router.post('/', withAuth, async (req, res) => {
     try {
       const bookData = await Book.create({
-        name: req.body.name,
+        ...req.body,
+        user_id: req.session.user_id,
       });
       res.status(200).json(bookData);
     } catch (err) {

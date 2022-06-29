@@ -27,4 +27,10 @@
   </div>
 </div>
 
-<h2>Books I Want to Read</h2>
+<h2>Books I Want to Read</h2> 
+{{#each books as |book|}}
+
+{{book.name}} {{book.author}} {{book.category}} {{book.date_published}} 
+
+{{/each}}
+<script src="./js/profile.js"></script>
