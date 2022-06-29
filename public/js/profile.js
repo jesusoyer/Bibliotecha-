@@ -14,10 +14,10 @@ const postBook = async (event) => {
       });
   
       if (response.ok) {
-        console.log('Successful log in')
+        console.log('booklist update')
         document.location.replace('/profile');
       } else {
-        alert('Failed to log in.');
+        alert('booklist failed to update.');
       }
     }
   };
