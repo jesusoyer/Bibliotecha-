@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hompage</title>
- 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,12 +18,11 @@
   <main>
    {{#if logged_in}}
         <a href = "/">Home</a>
-        <a href="/profile">profile</a> |
+        
         <button class="no-button" id="logout">logout</button>
         {{else}}
-         <h1>
-      Sign In.
-    </h1>
+      
+    <a href = "/profile">profile</a>
         <a href="/login">login</a>
         {{/if}}
 
