@@ -8,8 +8,6 @@
 <div class="row mt-4">
   <div class="col-md-6">
     <h2>Add a book to your to-read list</h2>
-
-
     <form class="form new-project-form">
       <div class="form-group">
         <label for="project-name">post title</label>
@@ -24,35 +22,32 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<h2>Books I Want to Read</h2> 
-{{#each books as |book|}}
-
-{{book.name}} {{book.author}} {{book.category}} {{book.date_published}} 
-
-{{/each}}
-<script src="./js/profile.js"></script>
-=======
-<h2>Books I Want to Read</h2>
-<p> Hi, {{books}} </p>
-
->>>>>>> b32cefa684bc972ad895741716d0b75e7ebb9db0
-{{#if books.length}}
-<div class="col-md-6 project-list">
-  <h3>Books To Read:</h3>
-
+<<<<<<< HEAD=======<<<<<<< HEAD <h2>Books I Want to Read</h2>
   {{#each books as |book|}}
-  <div class="row mb-2">
-    <div class="col-md-8">
-      <h4><a href="/project/{{book.id}}">{{book.name}}</a></h4>
-    </div>
-    <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id="{{book.id}}">DELETE</button>
-    </div>
-  </div>
+
+  {{book.name}} {{book.author}} {{book.category}} {{book.date_published}}
+
   {{/each}}
-</div>
-{{/if}}
->>>>>>> 109b353239e271980a26509d07da3d37661bc565
+  <script src="./js/profile.js"></script>
+  =======
+  <h2>Books I Want to Read</h2>
+  <p> Hi, {{books}} </p>
+
+  >>>>>>> b32cefa684bc972ad895741716d0b75e7ebb9db0
+  {{#if books.length}}
+  <div class="col-md-6 project-list">
+    <h3>Books To Read:</h3>
+
+    {{#each books as |book|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{book.id}}">{{book.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{book.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+  >>>>>>> 109b353239e271980a26509d07da3d37661bc565
