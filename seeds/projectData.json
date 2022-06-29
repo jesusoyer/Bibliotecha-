@@ -3,14 +3,14 @@
         "name": "Example Title One",
         "author": "Author McWords",
         "category": "Science-Fiction",
-        "date_published": "2001"
-        
+        "date_published": "2001",
+        "user_id": 1
     },
     {
         "name": "Example Title Two",
         "author": "Wordy McAuthor",
         "category": "Non-Fiction",
-        "date_published": "2002"
-        
+        "date_published": "2002",
+        "user_id": 1
     }
 ]
