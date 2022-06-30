@@ -12,26 +12,17 @@ Book.init(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [2, 32]
-            }
+            allowNull: true,
         },
         author: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                len: [2, 32]
-            }
         },
-        category: {
+        genre: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [2, 32]
-            }
+            allowNull: true,
         },
         user_id: {
             type: DataTypes.INTEGER,
