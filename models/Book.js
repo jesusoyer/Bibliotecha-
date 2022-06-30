@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Book extends Model {};
+class Book extends Model { };
 
 const sequelize = require('../config/connection.js');
 
@@ -12,38 +12,33 @@ Book.init(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [2, 32]
-            }
+            allowNull: true,
         },
         author: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                len: [2, 32]
-            }
         },
-        category: {
+        genre: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [2, 32]
-            }
-        },
-        date_published: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true,
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
-              id: 'id'
+                model: 'user',
+                id: 'id'
             }
-          }
+        },
+        rating: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
+        review: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        }
     },
     {
         sequelize,
@@ -51,7 +46,7 @@ Book.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'book',
-      }
+    }
 )
 
 module.exports = Book;
