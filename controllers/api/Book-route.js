@@ -65,10 +65,10 @@ router.get('/:id', async (req, res) => {
   });
 
   // delete data record by its id value
-  router.delete('/:id', async (req, res) => {
+  router.delete('/:isbn', async (req, res) => {
     const deletedData = await Book.destroy({
       where: {
-        id: req.params.id,
+        isbn: req.params.isbn,
       },
     });
     

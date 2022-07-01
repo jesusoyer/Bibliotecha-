@@ -109,11 +109,13 @@ const postBook = async (event) => {
   
 
   
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/history/${id}`, {
+  const deletePost = async (event) => {
+    event.preventDefault();
+    const isbnId = document.querySelector('#isbnValue'); 
+  console.log("delete route hit")
+  const isbn = isbnId.textContent;
+  console.log(isbn)
+      const response = await fetch(`/api/books/${isbn}`, {
         method: 'DELETE',
       });
   
@@ -123,7 +125,7 @@ const postBook = async (event) => {
         alert('Failed to delete project');
       }
     }
-  };
+  
 
 
 
@@ -131,7 +133,7 @@ const postBook = async (event) => {
 
 
 
-
+   
 
  
   document
@@ -141,3 +143,7 @@ const postBook = async (event) => {
   document
     .querySelector('#isbnSearch')
     .addEventListener('click',getApi);
+    
+    document
+    .querySelector('#deleteEntry')
+    .addEventListener('click',deletePost);
