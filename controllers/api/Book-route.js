@@ -29,9 +29,11 @@ router.get('/:id', async (req, res) => {
 
   // create a new data record
   router.post('/', withAuth, async (req, res) => {
+    console.log("book post route hit")
+    
     try {
       const bookData = await Book.create({
-        ...req.body,
+     ...req.body,
         user_id: req.session.user_id,
       });
       res.status(200).json(bookData);

@@ -6,39 +6,39 @@ const sequelize = require('../config/connection.js');
 
 Book.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
+        isbn: {
+            type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: false
         },
+         
+        
         title: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         author: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
-        genre: {
+        subjects: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
                 id: 'id'
             }
         },
-        rating: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-        },
-        review: {
+        publish_date: {
             type: DataTypes.STRING,
-            allowNull: true,
-        }
+            allowNull: false,
+        },
+       
     },
     {
         sequelize,

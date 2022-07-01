@@ -10,19 +10,37 @@
     <h2>Add a book to your to-read list</h2>
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">post title</label>
-        <input class="form-input" type="text" id="book_title" name="post_title" />
-        <label for="project-name">post author</label>
-        <input class="form-input" type="text" id="book_author" name="post_text" />
-        <label for="project-name">post category</label>
-        <input class="form-input" type="text" id="book_category" name="post_category" />
-        <label for="project-name">post rating</label>
+        <label for="project-name">ISBN-13</label>
+        <input class="form-input" type="text" id="isbnInput" name="post_isbn" />
+
+        <button type="submit" id="isbnSearch" class="btn btn-primary">search</button>
+
+       <p id="isbn">ISBN-13 Number: </p> 
+       <p id ="title"> Title: </p> 
+       <p id="author"> Author: </p> 
+       <p id="subjects">Subjects: </p> 
+       <p id="publishDate"> Publish Date: </p>
+
+       <button type="submit" id="updateTable" class="btn btn-primary">add book</button>
+       
+{{#each books as |book|}}
+ <h1>{{book.title}}</h1>  
+          <label for="rating">rating</label>
         <input class="form-input" type="text" id="rating" name="post_rating" />
+          <label for="project-name">review</label>
+        <input class="form-input" type="text" id="review" name="post_review" />
+        <button type="submit" id="post review" class="btn btn-primary">post review</button>
+ {{/each}}
+
+
+
+        {{!-- <input class="form-input" type="text" id="rating" name="post_rating" />
         <label for="project-name">post review</label>
+      
         <input class="form-input" type="text" id="review" name="post_review" />
 
 
-        <button type="submit" id="post" class="btn btn-primary">post</button>
+        
 
       </div>
     </form>
@@ -32,14 +50,14 @@
 
 
 
-  {{/each}}
+  {{!-- {{/each}} --}}
   <script src="./js/profile.js"></script>
-  =======
+  {{!-- =======
   <h2>Books I Want to Read</h2>
-  <p> Hi, {{books}} </p>
-
-  >>>>>>> b32cefa684bc972ad895741716d0b75e7ebb9db0
-  {{#if books.length}}
+  <p> Hi, {{books}} </p> --}}
+ 
+  
+  {{!-- {{#if books.length}}
   <div class="col-md-6 project-list">
     <h3>Books To Read:</h3>
 
@@ -52,6 +70,6 @@
         <button class="btn btn-sm btn-danger" data-id="{{book.id}}">DELETE</button>
       </div>
     </div>
-    {{/each}}
+    {{/each}} --}}
   </div>
 
