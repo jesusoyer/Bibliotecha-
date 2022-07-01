@@ -30,6 +30,7 @@
 <div class="flex-container">
 {{#each books as |book|}}
  <h1 class="bookList"> <button type="submit" id="deleteEntry" class="btn btn-primary col-sm-2 deletebtn">Delete Book Entry</button>{{book.title}}, {{book.author}} </h1>
+  <h1 id="isbnValue">{{book.isbn}}</h1>
          <div> <select class="form-select" aria-label="Disabled select example">
   <option selected>open to rate book</option>
   <option value="1">1 -Trash</option>
