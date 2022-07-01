@@ -15,3 +15,19 @@
   .form-control{
     margin-bottom: 12px;
   }
+  .homepage-title{
+    font-size: 50px;
+    margin-left: 150%;
+    color:peru;
+  }
+  .list-inline{
+    background-color: black;
+  }
+  .books{
+    background-color: white;
+    font-size: 30px;
+  }
+  .deletebtn{
+    color:black;
+    background-color:red;
+  }

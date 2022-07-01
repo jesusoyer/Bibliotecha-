@@ -15,21 +15,21 @@
 
         <button type="submit" id="isbnSearch" class="btn btn-primary">search</button>
     <div class="w-100 p-3 flex-container">
-      <ul class="list-inline">
+      <ul class="list-inline books">
        <li class="list-inline-item" id="isbn">ISBN-13 Number: </li> 
        <li class="list-inline-item" id ="title"> Title: </li> 
        <li class="list-inline-item" id="author"> Author: </li> 
        <li class="list-inline-item" id="subjects">Subjects: </li> 
        <li class="list-inline-item" id="publishDate"> Publish Date: </li>
      </ul>
-       <button type="submit" id="updateTable" class="btn btn-primary">add book</button>
+       <button type="submit" id="updateTable" class="btn btn-primary ">add book</button>
         </div>
        </div>
 
 
 <div class="flex-container">
 {{#each books as |book|}}
- <h1 class="bookList">{{book.title}}, {{book.author}}</h1>  
+ <h1 class="bookList"> <button type="submit" id="deleteEntry" class="btn btn-primary col-sm-2 deletebtn">Delete Book Entry</button>{{book.title}}, {{book.author}} </h1>
          <div> <select class="form-select" aria-label="Disabled select example">
   <option selected>open to rate book</option>
   <option value="1">1 -Trash</option>
