@@ -4,7 +4,7 @@
 
   </div>
 </div>
-
+<div class="flex-container">
 <div class="row mt-4">
   <div class="col-md-6">
     <h2>Add a book to your to-read list</h2>
@@ -14,24 +14,40 @@
         <input class="form-input" type="text" id="isbnInput" name="post_isbn" />
 
         <button type="submit" id="isbnSearch" class="btn btn-primary">search</button>
-
-       <p id="isbn">ISBN-13 Number: </p> 
-       <p id ="title"> Title: </p> 
-       <p id="author"> Author: </p> 
-       <p id="subjects">Subjects: </p> 
-       <p id="publishDate"> Publish Date: </p>
-
+    <div class="w-100 p-3 flex-container">
+      <ul class="list-inline">
+       <li class="list-inline-item" id="isbn">ISBN-13 Number: </li> 
+       <li class="list-inline-item" id ="title"> Title: </li> 
+       <li class="list-inline-item" id="author"> Author: </li> 
+       <li class="list-inline-item" id="subjects">Subjects: </li> 
+       <li class="list-inline-item" id="publishDate"> Publish Date: </li>
+     </ul>
        <button type="submit" id="updateTable" class="btn btn-primary">add book</button>
-       
-{{#each books as |book|}}
- <h1>{{book.title}}</h1>  
-          <label for="rating">rating</label>
-        <input class="form-input" type="text" id="rating" name="post_rating" />
-          <label for="project-name">review</label>
-        <input class="form-input" type="text" id="review" name="post_review" />
-        <button type="submit" id="post review" class="btn btn-primary">post review</button>
- {{/each}}
+        </div>
+       </div>
 
+
+<div class="flex-container">
+{{#each books as |book|}}
+ <h1 class="bookList">{{book.title}}, {{book.author}}</h1>  
+         <div> <select class="form-select" aria-label="Disabled select example">
+  <option selected>open to rate book</option>
+  <option value="1">1 -Trash</option>
+  <option value="2">2 -It was ok</option>
+  <option value="3">3 -It's decent</option>
+  <option value="4">4 - Great book</option>
+  <option value="5">5 -Life changing 100% reccomend</option>
+</select>
+        </div>
+         <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">review</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+        <div>
+        <button type="submit" id="post review" class="btn post-review">post review</button>
+        </div>
+ {{/each}}
+</div>
 
 
         {{!-- <input class="form-input" type="text" id="rating" name="post_rating" />

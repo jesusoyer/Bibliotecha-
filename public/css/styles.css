@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+    
+    margin-left: 20px;
+    margin-top: 15px;
+    flex-direction: column;
+  }
+  .booklist{
+    font-size: 12px;
+    margin-left: 12px;
+  }
+  h1{
+    font-size: 25px;
+  }
+  .form-control{
+    margin-bottom: 12px;
+  }
