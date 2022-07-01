@@ -1,4 +1,4 @@
-const loginFormHandler = async (event) => {
+const login = async (event) => {
     event.preventDefault();
   
     const email = document.querySelector('#email-login').value.trim();
@@ -15,12 +15,12 @@ const loginFormHandler = async (event) => {
         console.log('Successful log in')
         document.location.replace('/profile');
       } else {
-        alert('Failed to log in.');
+        console.log('Failed to log in. login.js');
       }
     }
   };
 
-  const signupFormHandler = async (event) => {
+  const signUp = async (event) => {
     event.preventDefault();
   
     const username = document.querySelector('#username-signup').value.trim();
@@ -44,9 +44,9 @@ const loginFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .querySelector('#login')
+    .addEventListener('click', login);
   
   document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+    .querySelector('#sign-up')
+    .addEventListener('click', signUp);
