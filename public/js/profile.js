@@ -103,26 +103,36 @@ const postBook = async (event) => {
             
 
            })
-
-      
-
-
-
-
-
-        //    var requestUrl = 'https://covers.openlibrary.org/b/id/'+cover+'-S.jpg.json';
-        //    fetch(requestUrl)
-        //    .then(function (response) {
-        //     return response.json();
-        //   })
-        //   .then(function (coverData) {
-        //     console.log(coverData)
-
-        //    })
       });
   }
 
   
+
+  
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/history/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  };
+
+
+
+
+
+
+
+
+
  
   document
   .querySelector('#updateTable')
