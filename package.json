@@ -19,15 +19,9 @@
   "homepage": "https://github.com/jesusoyer/Group-3-Project-2#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
-<<<<<<< HEAD
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "5.2.0",
-=======
     "dotenv": "^8.6.0",
     "express": "^4.18.1",
     "express-handlebars": "^5.3.5",
->>>>>>> 7c01a7d46917a1c666e5b2ea456a125afd08ca95
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
