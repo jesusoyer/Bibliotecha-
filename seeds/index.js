@@ -1,5 +1,5 @@
 const userData= require("./user.json")
-const bookData=require("./projectData.json")
+const bookData=require("./books.json")
 const User = require('../models/User')
 const Book = require('../models/Book')
 const sequelize = require('../config/connection');

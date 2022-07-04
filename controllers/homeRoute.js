@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
      
 
   res.render('homepage', {
-    book, loggedIn: req.session.logged_In,});
+    book, });
     
     } catch (err) {
       console.log(err)

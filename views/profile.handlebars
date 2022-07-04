@@ -4,25 +4,89 @@
 
   </div>
 </div>
-
+<div class="flex-container">
 <div class="row mt-4">
   <div class="col-md-6">
-
-
+    <h2>Add a book to your to-read list</h2>
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">post title</label>
-        <input class="form-input" type="text" id="post_title" name="post_title" />
-        <label for="project-name">post text</label>
-        <input class="form-input" type="text" id="post_text" name="post_text" />
-         <label for="project-name">post text</label>
-       
-      <button type="submit" id = "post" class="btn btn-primary">post</button>
+        <label for="project-name">ISBN-13</label>
+        <input class="form-input" type="text" id="isbnInput" name="post_isbn" />
 
-       
+        <button type="submit" id="isbnSearch" class="btn btn-primary">search</button>
+    <div class="w-100 p-3 flex-container">
+      <ul class="list-inline books">
+       <li class="list-inline-item" id="isbn">ISBN-13 Number: </li> 
+       <li class="list-inline-item" id ="title"> Title: </li> 
+       <li class="list-inline-item" id="author"> Author: </li> 
+       <li class="list-inline-item" id="subjects">Subjects: </li> 
+       <li class="list-inline-item" id="publishDate"> Publish Date: </li>
+     </ul>
+       <button type="submit" id="updateTable" class="btn btn-primary ">add book</button>
+        </div>
+       </div>
+
+
+<div class="flex-container">
+{{#each books as |book|}}
+ <h1 class="bookList"> <button type="submit" id="deleteEntry" class="btn btn-primary col-sm-2 deletebtn">Delete Book Entry</button>{{book.title}}, {{book.author}} </h1>
+  <h1 id="isbnValue">{{book.isbn}}</h1>
+         <div> <select class="form-select" aria-label="Disabled select example">
+  <option selected>open to rate book</option>
+  <option value="1">1 -Trash</option>
+  <option value="2">2 -It was ok</option>
+  <option value="3">3 -It's decent</option>
+  <option value="4">4 - Great book</option>
+  <option value="5">5 -Life changing 100% reccomend</option>
+</select>
+        </div>
+         <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">review</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+        <div>
+        <button type="submit" id="post review" class="btn post-review">post review</button>
+        </div>
+ {{/each}}
+</div>
+
+
+        {{!-- <input class="form-input" type="text" id="rating" name="post_rating" />
+        <label for="project-name">post review</label>
+      
+        <input class="form-input" type="text" id="review" name="post_review" />
+
+
+        
+
+      </div>
+    </form>
+  </div>
+</div>
 
 
 
 
+  {{!-- {{/each}} --}}
+  <script src="./js/profile.js"></script>
+  {{!-- =======
+  <h2>Books I Want to Read</h2>
+  <p> Hi, {{books}} </p> --}}
+ 
+  
+  {{!-- {{#if books.length}}
+  <div class="col-md-6 project-list">
+    <h3>Books To Read:</h3>
 
+    {{#each books as |book|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{book.id}}">{{book.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{book.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}} --}}
+  </div>
 

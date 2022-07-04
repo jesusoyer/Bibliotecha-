@@ -5,26 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hompage</title>
- 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+ <link rel="stylesheet" href="./css/styles.css">
 </head>
 
+
+
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-   
-  </header>
   
 
-  </nav>
+  
   <main>
    {{#if logged_in}}
-        <a href = "/">Home</a>
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+   <div class="flex-container">
+        <ul class="list-inline navbar">
+         <li><a href="/">Home</a></li> 
+        <li><a href="/profile">profile</a></li>
+        <li><button class="no-button" id="logout">logout</button></li>
+        <li><h1 class="homepage-title">bibloTECHA</h1></li>
+        </ul>
+        </div>
         {{else}}
-         <h1>
-      Sign In.
-    </h1>
-        <a href="/login">login</a>
+      
+    {{!-- <a href = "/profile">profile</a> --}}
+        
+        <ul class="list-inline ">
+         <li><a href="/">Home</a></li> 
+        <li><a href="/profile">profile</a></li>
+  
+        <li><h1 class="homepage-title">bibloTECHA</h1></li>
+        </ul>
+        
         {{/if}}
 
 
