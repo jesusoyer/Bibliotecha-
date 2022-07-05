@@ -21,8 +21,8 @@ router.get('/:isbn', async (req, res) => {
       return;
     }
     const books = bookData.get({plain:true});
-    // res.status(200).json(bookData);
-    res.render('books', { books, logged_in: req.session.logged_in  });
+    res.status(200).json(books);
+    // res.render('books', { books, logged_in: req.session.logged_in  });
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
