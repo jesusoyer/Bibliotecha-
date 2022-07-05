@@ -15,7 +15,7 @@ const postBook = async (event) => {
    
    
    
-    const isbn = isbnNum.textContent;
+    const isbn = isbnNum.textContent.parseInt();
     const title = bookTitle.textContent;
     const author = bookAuthor.textContent;
     const subjects = bookSubjects.textContent;

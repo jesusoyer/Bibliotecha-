@@ -6,11 +6,14 @@ const sequelize = require('../config/connection.js');
 
 Book.init(
     {
+        
+
         isbn: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: false
+            autoIncrement: false,
+
         },
          
         
