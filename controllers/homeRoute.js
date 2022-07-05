@@ -70,6 +70,22 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/:isbn', async (req, res) => {
+  try {
+    const bookData = await Book.findByPk(req.params.isbn, {});
+    if (!bookData) {
+      res.status(404).json({ message: 'No category with this isbn!' });
+      return;
+    }
+    const books = bookData.get({plain:true});
+    // res.status(200).json(bookData);
+    res.render('books', { books, logged_in: req.session.logged_in  });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
+  });
+
 
 
 
