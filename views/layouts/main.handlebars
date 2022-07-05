@@ -13,36 +13,32 @@
 
 
 <body>
-  
-
-  
   <main>
    {{#if logged_in}}
-   <div class="flex-container">
-        <ul class="list-inline navbar">
-         <li><a href="/">Home</a></li> 
-        <li><a href="/profile">profile</a></li>
-        <li><button class="no-button" id="logout">logout</button></li>
-        <li><h1 class="homepage-title">bibloTECHA</h1></li>
+   <section class="home">
+    <nav class="gray-theme navbar-custom">
+      <h1 class="homepage-title pink-text">bibloTECHA</h1>
+        <ul class="navlinks">
+        <li><a href="/">Home</a></li> 
+        <li><a href="/profile">Profile</a></li>
+        <li><button class="logout-btn btn-block--primary" id="logout">Logout</button></li>
         </ul>
-        </div>
+    </nav>
+       
         {{else}}
-      
-    {{!-- <a href = "/profile">profile</a> --}}
-        
-        <ul class="list-inline ">
-         <li><a href="/">Home</a></li> 
-        <li><a href="/profile">profile</a></li>
   
-        <li><h1 class="homepage-title">bibloTECHA</h1></li>
+    {{!-- <a href = "/profile">profile</a> --}}
+    <nav class="gray-theme navbar-custom">
+      <h1 class="homepage-title pink-text">bibloTECHA</h1>
+        <ul class="navlinks">
+        <li><a href="/">Home</a></li> 
+        <li><a href="/profile">Profile</a></li>
         </ul>
-        
+    </nav>
+ </section>
         {{/if}}
 
-
-   
 {{{body}}}
-    
 
  {{#if logged_in}}
   <script src="/js/logout.js"></script>
