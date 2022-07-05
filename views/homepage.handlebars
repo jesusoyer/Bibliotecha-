@@ -1,4 +1,29 @@
 
+<section>
+	<div class='gradient homepage-gradient'>
+		<div class='containment spacer-lg'>
+			<div><h1 class='homepage-title white-text text-center'>Welcome to
+					bibloTECHA</h1>
+				<p class='push-up white-text text-center home-description'>Search and
+					review your book today.</p></div>
+			<div class='home-image-bg'></div>
+			<div class='login-btn-container'>
+				<a class='btn-block--pink' href='/profile'>
+					Login
+				</a>
+				<a class='btn-block--secondary' href='/profile'>
+					Sign Up
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+{{#each book as |books|}}
+	{{!-- <div>{{name}} {{author}} {{category}} {{category}} {{ date_published}}<div> --}}
+{{/each}}
+
+
 {{!-- <div>
     {{books.title}} by {{books.author}} {{books.publish_date}} {{books.subjects}}
 <div> --}}
@@ -39,4 +64,5 @@
 {{!-- {{else}}
 <a href="/login">Login to see additional information on this title</a>
 {{/if}} --}}
+
 
