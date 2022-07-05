@@ -1,3 +1,4 @@
+
 <section>
 	<div class='gradient homepage-gradient'>
 		<div class='containment spacer-lg'>
@@ -21,3 +22,47 @@
 {{#each book as |books|}}
 	{{!-- <div>{{name}} {{author}} {{category}} {{category}} {{ date_published}}<div> --}}
 {{/each}}
+
+
+{{!-- <div>
+    {{books.title}} by {{books.author}} {{books.publish_date}} {{books.subjects}}
+<div> --}}
+
+{{!--homepage.handlebars --}}
+{{#each book as |books|}}
+{{>books-details}}
+{{/each}}
+
+
+{{!-- books-details.handlebars --}}
+
+{{!-- <section class="card">
+  <a href="/api/books/{{books.isbn}}">
+    <header>{{books.title}}</header>
+
+    <div class="card-body">
+      <img src="/images/{{filename}}" alt="{{description}}">
+      <p>By: {{books.author}}</p>
+    </div>
+  </a>
+</section> --}}
+
+{{!-- books.handlebars --}}
+
+{{!-- <section class="container">
+  <h3>{{books.title}}</h3>
+  <h4>By {{books.author}}</h4>
+  <!-- If the user is logged in, render the books info -->
+  {{#if loggedIn}}
+  <section class="flex-row justify-center">
+    <h4>ISBN: {{books.isbn}} </h4>
+    <h4>Published: {{books.publish_date}} </h4>
+    <h4>Genre: {{books.subjects}} </h4>
+  </section>
+</section> --}}
+<!-- Otherwise, provide a link to login -->
+{{!-- {{else}}
+<a href="/login">Login to see additional information on this title</a>
+{{/if}} --}}
+
+
