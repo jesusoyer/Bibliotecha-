@@ -12,15 +12,17 @@ router.get('/', async (req, res) => {
     }
     });
 
-//get one data record by its id value
-router.get('/:id', async (req, res) => {
+//get one data record by its isbn value
+router.get('/:isbn', async (req, res) => {
   try {
-    const bookData = await Book.findByPk(req.params.id, {});
+    const bookData = await Book.findByPk(req.params.isbn, {});
     if (!bookData) {
-      res.status(404).json({ message: 'No category with this id!' });
+      res.status(404).json({ message: 'No category with this isbn!' });
       return;
     }
-    res.status(200).json(bookData);
+    const books = bookData.get({plain:true});
+    // res.status(200).json(bookData);
+    res.render('books', { books, logged_in: req.session.logged_in  });
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
