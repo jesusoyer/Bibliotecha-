@@ -9,7 +9,7 @@ Book.init(
         
 
         isbn: {
-            type: DataTypes.string,
+            type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,
             autoIncrement: false,
