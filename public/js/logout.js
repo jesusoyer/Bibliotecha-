@@ -1,3 +1,6 @@
+const getQuote = require('literature-clock');
+
+
 const logout = async () => {
   console.log('logout.js file hit')
     const response = await fetch('/api/users/logout', {
@@ -12,6 +15,19 @@ const logout = async () => {
       alert('Failed to log out.');
     }
   };
+
+
+ 
+
+  const now = new Date();
+  console.log(getQuote(now))
+
+
+
+
+  
+
+
   
   document.querySelector('#logout').addEventListener('click', logout);
   
