@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const  Book  = require('../../models/Book.js');
 const withAuth = require('../../utils/auth.js');
+const chalk = require('chalk');
 
 //get all data records
 router.get('/', async (req, res) => {
@@ -31,7 +32,7 @@ router.get('/:isbn', async (req, res) => {
 
   // create a new data record
   router.post('/', withAuth, async (req, res) => {
-    console.log("book post route hit")
+    console.log(chalk.green("book post route hit"))
     
     try {
       const bookData = await Book.create({
@@ -39,6 +40,7 @@ router.get('/:isbn', async (req, res) => {
         user_id: req.session.user_id,
       });
       res.status(200).json(bookData);
+      console.log(chalk.green("new book posted"))
     } catch (err) {
       res.status(400).json(err);
     }
@@ -75,6 +77,7 @@ router.get('/:isbn', async (req, res) => {
     });
     
     res.json(deletedData);
+    console.log(chalk.green('book deleted'))
   });
 
     module.exports = router;
