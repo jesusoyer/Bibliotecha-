@@ -136,9 +136,9 @@ console.log(isbn)
  
 
 
-// document
-// .querySelector('#updateTable')
-// .addEventListener('click',postBook);
+document
+.querySelector('#updateTable')
+.addEventListener('click',postBook);
 
 document
   .querySelector('#isbnSearch')
