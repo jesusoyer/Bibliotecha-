@@ -3,7 +3,7 @@ const session = require('express-session');
 const sequelize = require('./config/connection');
 const routes = require('./controllers/index.js')
 const path = require('path');
-
+const chalk = require('chalk')
 const exphbs = require('express-handlebars');
 
 // const Example = require('./models/example.js')
@@ -33,3 +33,6 @@ app.use(routes)
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+console.log(chalk.green("book route messages are green"))
+console.log(chalk.blue("user route messages are blue"))

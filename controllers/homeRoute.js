@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models/User')
 const Book = require('../models/Book');
 const withAuth = require('../utils/auth')
+const chalk = require('chalk')
 
 router.get('/', async (req, res) => {
   try {
@@ -29,7 +30,7 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  console.log("login route")
+  console.log(chalk.blue("login route"))
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
@@ -42,7 +43,7 @@ router.get('/login', (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    console.log('you are here at profile route')
+    console.log(chalk.blue('you are here at profile route'))
     // Find the logged in user based on the session ID
     const userData= await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
