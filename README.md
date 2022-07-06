@@ -1,16 +1,16 @@
 # <p align="center">biblioTECHa
 ### <p align="center">📚</p>
 #### <p align="center">Virtual Library & Book Club Application</p> 
-#### <p align="center"> Created with [Node.js](https://nodejs.org/en/), [Express.js](https://expressjs.com/), [MySQL](https://www.mysql.com/), and [Sequalize](https://sequelize.org/) to interact with [api link will go here if we use it], and [Bootstrap](https://getbootstrap.com/).</p>
+#### <p align="center"> Created with [Node.js](https://nodejs.org/en/), [Express.js](https://expressjs.com/), [MySQL](https://www.mysql.com/), and [Sequalize](https://sequelize.org/) to interact with [Open Library API](https://openlibrary.org/dev/docs/api/read), and [Bootstrap](https://getbootstrap.com/).</p>
 
-### <p align="center">---demo application here---</p>
 ## 📖 User Story
+***As a user,*** I am able to sign up for biblioTECHA with a username, email, and password, add books to my book list, create reviews, and post comments.
+
 ***biblioTECHa*** is a website that gives users their own virtual library card. As a user you will be able to search and add books to your booklist, create reviews, and comment on fellow readers' posts. This application implements the following features:
 -  **Authentication.**  Make your own account, all that's needed is your desired username, email, and password.
 -   **Posting and Commenting.**  This thread is aggregated onto the side in chronological order.
--   **Calls to the ----api here-----.**  The  [Book API](https://openweathermap.org/api)  is blah blah 
-
- - **Styled with Bootstrap.**  [Bootstrap](https://getbootstrap.com/)  is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
+-   **Calls to the Open Library API**  The [Open Library API](https://openlibrary.org/dev/docs/api/read) is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.   
+- **Styled with Bootstrap.**  [Bootstrap](https://getbootstrap.com/)  is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
  - **Hosted with Heroku.**  [Heroku](https://www.heroku.com/)  offers both web-based and command-line interfaces in order to adapt to an extremely easy and intuitive user interface dependent on the user.
 
 ## 🤔 What's Inside?
@@ -48,4 +48,5 @@ A quick look at the files and directories you'll see in this project:
         date_published
 
 ## Link to Website
-link will go here
+[https://arcane-harbor-36381.herokuapp.com/](https://arcane-harbor-36381.herokuapp.com/)
+
