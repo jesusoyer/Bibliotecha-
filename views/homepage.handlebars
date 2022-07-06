@@ -7,6 +7,7 @@
 				<p class='push-up white-text text-center home-description'>Search and
 					review your book today.</p></div>
 			<div class='home-image-bg'></div>
+		{{#unless logged_in}}
 			<div class='login-btn-container'>
 				<a class='btn-block--pink' href='/profile'>
 					Login
@@ -15,6 +16,7 @@
 					Sign Up
 				</a>
 			</div>
+		{{/unless}}
 		</div>
 	</div>
 </section>
